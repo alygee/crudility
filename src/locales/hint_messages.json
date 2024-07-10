@@ -1,0 +1,114 @@
+{
+  "en": {
+    "title": "Help",
+    "search_mode": {
+      "title": "Search",
+      "description_1": "Select an object from the scheme that will be searched. To do this, double-click on the table row or enter the name of the object manually. As you enter text, the possible options for the values will be displayed in the drop-down list, based on the context of your request.",
+      "description_2": "After selecting an entity, the data in the table is updated."
+    },
+    "request_format": {
+      "title": "Query format",
+      "description_1": "A simple search query consists of the name of an object. Such a query returns all instances of the selected object. <br> The name of the object is separated by a colon from the search conditions. <br> A simple condition consists of a field, followed by an operator, followed by one or more values. For instance:",
+      "description_2": "This query will find all projects with the name \"TEST\". <br> A more complex query might look like this:",
+      "description_3": "This query will find all projects with the test name “TEST”, the description of which contains the string 'IT support'."
+    },
+    "rules": {
+      "title": "Rules of constructing and editing a request",
+      "colon": {
+        "title": "The name of the object is limited to a colon.",
+        "description": "When you click on a table row or drop-down list item, a colon is automatically set. <br>\nWith manual entry, the colon is automatically set if in the list\nthe options found <i> only </ i> the appropriate value. If there are more than one options in the list, you must put a colon manually."
+      },
+      "quotes": {
+        "title":"If the <i> search value </i> consists of more than one word, you must wrap the text in quotation marks.",
+        "description_1": "For example, the value 'IT support' in the following query:",
+        "description_2": "The names of fields and objects do not need to be wrapped in quotation marks."
+      },
+      "edit": {
+        "title": "Query editing should be done only from the end of the line."
+      }
+    },
+    "validation": {
+      "title": "Query validation",
+      "description": "The icon in the left part of the input field informs about the correctness of the entered request.",
+      "valid": "The correct request was entered:",
+      "invalid": "Invalid request entered:"
+    },
+    "hotkeys": {
+      "title": "Hotkeys",
+      "keys": [
+        {
+          "key": "Ctrl+A",
+          "action": "Switch to the search page (on the pages of creating or viewing an object)"
+        },
+        {
+          "key": "Ctrl+X",
+          "action": "Clear input line"
+        },
+        {
+          "key": "Esc",
+          "action": "Disable dropdown list of options. In this case, the list of options will not be displayed for any actions with the string. You can turn on the display of options by pressing Esc again, or by pressing Ctrl + Space"
+        },
+        {
+          "key": "Ctrl+Space (textarea focused)",
+          "action": "Show list of suggested options"
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Помощь",
+    "search_mode": {
+      "title": "Поиск",
+      "description_1": "Выберите объект из схемы, по которому будет осуществляться поиск. Для этого можно дважды кликнуть на строку таблицы либо ввести наименование объекта вручную. По мере ввода текста в выпадающем списке будут отображаться возможные варианты значений, основанные на контексте вашего запроса.",
+      "description_2": "После выбора сущности данные в таблице обновятся."
+    },
+    "request_format": {
+      "title": "Формат запроса",
+      "description_1": "Простой запрос поиска состоит из названия объекта. Такой запрос возвращает все экземпляры выбранного объекта.<br> Название объекта отделяется двоеточием от условий поиска.<br> Простое условие состоит из поля, за которым следует  оператор, за которым следует одно или несколько значений. Например:",
+      "description_2": "Этот запрос найдет все проекты с именем \"TEST\".<br> Более сложный запрос может выглядеть так:",
+      "description_3": "Этот запрос найдет все проекты с названием тест «TEST», описание которых содержит строку 'IT support'."
+    },
+    "rules": {
+      "title": "Правила построение и редактирования запроса",
+      "colon": {
+        "title": "Название объекта ограничивается двоеточием.",
+        "description": " При клике на строку таблицы или элемент выпадающего списка двоеточие устанавливается автоматически. <br> При ручном вводе двоеточие устанавливается автоматически, если в списке предложенных вариантов найдено <i>единственное </i> подходящее значение. Если вариантов в списке больше одного необходимо поставить двоеточие вручную."
+      },
+      "quotes": {
+        "title":"Если <i>значение поиска</i> состоит из более чем одного слова, необходимо оборачивать текст в кавычки.",
+        "description_1": "ForНапример, значение 'IT support' в следующем запросе:",
+        "description_2": "Названия полей и объектов оборачивать кавычками не нужно."
+      },
+      "edit": {
+        "title": "Редактирование запроса необходимо производить только с конца строки."
+      }
+    },
+    "validation": {
+      "title": "Валидация запроса",
+      "description": "Иконка в левой части поля ввода информирует о корректности введенного запроса.",
+      "valid": "Введен корректный запрос:",
+      "invalid": "Введен некорректный запрос:"
+    },
+    "hotkeys": {
+      "title": "Горячие клавиши",
+      "keys": [
+        {
+          "key": "Ctrl+A",
+          "action": "Перейти на страницу поиска (на страницах создания или просмотра объекта)"
+        },
+        {
+          "key": "Ctrl+X",
+          "action": "Очистить строку ввода"
+        },
+        {
+          "key": "Esc",
+          "action": "Отключить выпадающий список опций. При этом список опций не будет отображаться при любых действиях со строкой. Включить отображение опций можно повторно нажав Esc, либо сочетанием клавиш Ctrl+Space"
+        },
+        {
+          "key": "Ctrl+Space (textarea focused)",
+          "action": "Показать список предложенных опций"
+        }
+      ]
+    }
+  }
+}

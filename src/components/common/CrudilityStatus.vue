@@ -21,14 +21,14 @@
 </template>
 
 <script>
-import CrudilityIcon from '../ui/CrudilityIcon.vue';
+import CrudilityIcon from "../ui/CrudilityIcon.vue";
 import CrudilityTooltip from "../ui/CrudilityTooltip";
 
 export default {
-  name: 'CrudilityStatus',
+  name: "CrudilityStatus",
   components: {
     CrudilityTooltip,
-    CrudilityIcon,
+    CrudilityIcon
   },
   props: {
     status: {
@@ -38,41 +38,43 @@ export default {
       type: String
     }
   },
-  data () {
+  data() {
     return {
       show: false,
       statuses: {
         success: {
-          name: 'check-circle-outline',
-          color: 'green'
+          name: "check-circle-outline",
+          color: "#ff6347"
         },
         error: {
-          name: 'alert-circle-outline',
-          color: 'error'
+          name: "alert-circle-outline",
+          color: "error"
         }
       }
-    }
+    };
   },
   watch: {
     status(value) {
-      this.show = !value
+      this.show = !value;
       if (this.show) {
-        setTimeout(() => { this.show = false }, 3000)
+        setTimeout(() => {
+          this.show = false;
+        }, 3000);
       }
     }
   },
   computed: {
-    value () {
-      return this.status ? 'success' : 'error'
+    value() {
+      return this.status ? "success" : "error";
     }
   }
 };
 </script>
 
 <style lang="scss">
-  .crudility-status {
-    &__icon {
-      font-size: 40px !important;
-    }
+.crudility-status {
+  &__icon {
+    font-size: 40px !important;
   }
+}
 </style>

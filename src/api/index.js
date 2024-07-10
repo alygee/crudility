@@ -1,5 +1,7 @@
-import axios from 'axios'
-import Vue from 'vue'
+import axios from "axios";
+import Vue from "vue";
+import mockServicesSchema from "../assets/mock/newSchema";
+import mockServicesData from "../assets/mock/data";
 
 /**
  * wrapper служит декторатором для вставки токена и префикса в запрос.
@@ -8,38 +10,53 @@ import Vue from 'vue'
  * @param {object} data
  * @returns {Promise<AxiosResponse<T>>}
  */
-function requestWrapper (path, data = {}) {
+// eslint-disable-next-line no-unused-vars
+function requestWrapper(path, data = {}) {
   return axios
     .post(`/${Vue.prototype.$prefix}/${path}`, data, {
-      headers: { 'X-Token-Header': Vue.prototype.$token }
+      headers: { "X-Token-Header": Vue.prototype.$token }
     })
-    .then((response) => {
+    .then(response => {
       if (response.data.error) {
-        throw new Error(response.data.error)
+        throw new Error(response.data.error);
       } else {
-        return response
+        return response;
       }
-    })
+    });
 }
 
 export default {
-  fetchSchema () {
-    return requestWrapper('meta/schema')
+  fetchSchema() {
+    return Promise.resolve({
+      data: mockServicesSchema
+    });
   },
 
-  fetchData (data) {
-    return requestWrapper('query', data)
+  fetchData() {
+    return Promise.resolve({
+      data: mockServicesData
+    });
   },
 
-  create (entityData) {
-    return requestWrapper('create', entityData)
+  create(data) {
+    return Promise.resolve({
+      data: {
+        entityName: data.entityName,
+        entities: { data }
+      }
+    });
   },
 
-  update (data) {
-    return requestWrapper('update', data)
+  update(data) {
+    return Promise.resolve({
+      data: {
+        entityName: data.entityName,
+        entities: { data }
+      }
+    });
   },
 
-  delete (data) {
-    return requestWrapper('delete', data)
+  delete() {
+    return Promise.resolve({ data: {} });
   }
-}
+};

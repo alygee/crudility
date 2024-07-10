@@ -1,6 +1,6 @@
-# ui2.0
+# Crudility
 
-## О проект
+## О проекте
 
 Проект является аналогом поиска в Jira через структурированные запросы на языке JQL (Jira Query Language).
 
@@ -25,27 +25,6 @@ import RouteAdapter from './RouteAdapter';
 Vue.use(Vuetify);
 Vue.use(VueI18n);
 
-Vue.prototype.$getValues = function(data) {
-  if (data.fields || data.links) {
-    data = data.fields.concat(data.links);
-  }
-  return data.map((item) => item.title || item.name);
-};
-
-Vue.prototype.$findValue = function(value, dataList) {
-  if (!value) {
-    return {};
-  }
-
-  let name;
-  let title;
-  return dataList.find((data) => {
-    name = data.name ? data.name.toUpperCase() : '';
-    title = data.title ? data.title.toUpperCase() : '';
-    return [name, title].includes(value.toUpperCase());
-  });
-};
-
 let vue;
 
 Vue.prototype.$prefix = 'bo/api/v1/crudility';
@@ -56,13 +35,9 @@ Vue.prototype.$path = this.$location
 
 vue = new Vue({
   vuetify: new Vuetify({
-    icons: {
-      iconfont: 'mdi',
-    },
+    icons: { iconfont: 'mdi' },
   }),
-  i18n: new VueI18n({
-    locale: 'ru',
-  }),
+  i18n: new VueI18n({ locale: 'ru' }),
   render: (createElement) =>
     createElement('v-app', [
       createElement(Crudility, {
